@@ -20,6 +20,7 @@ const Blog = (props) => {
     } else {
       navigate("/404");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {

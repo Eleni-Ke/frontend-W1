@@ -6,7 +6,7 @@ import BlogItem from "../blog-item/BlogItem";
 const BlogList = (props) => {
   return (
     <Row>
-      {posts.map((post) => (
+      {props.postsArr.map((post) => (
         <Col
           md={4}
           style={{
