@@ -11,7 +11,7 @@ function App() {
   const [posts, setPosts] = useState([]);
   const getAllPosts = async () => {
     try {
-      let res = await fetch(process.env.FE_PROD_URL);
+      let res = await fetch(process.env.BE_PROD_URL + "/blogposts");
       if (res.ok) {
         let postArr = await res.json();
         setPosts(postArr);
