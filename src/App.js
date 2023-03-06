@@ -12,7 +12,7 @@ function App() {
   const getAllPosts = async () => {
     console.log(process.env.REACT_APP_BE_PROD_URL);
     try {
-      let res = await fetch(process.env.REACT_APP_BE_PROD_URL + "/blogposts");
+      let res = await fetch(process.env.REACT_APP_BE_URL + "/blogposts");
 
       if (res.ok) {
         let postArr = await res.json();
