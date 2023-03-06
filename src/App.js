@@ -10,10 +10,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [posts, setPosts] = useState([]);
   const getAllPosts = async () => {
+    console.log(process.env.REACT_APP_BE_PROD_URL);
     try {
-      let res = await fetch(process.env.BE_PROD_URL + "/blogposts");
+      let res = await fetch(process.env.REACT_APP_BE_PROD_URL + "/blogposts");
+
       if (res.ok) {
         let postArr = await res.json();
+        console.log(postArr);
         setPosts(postArr);
       } else {
         console.log("There has been a error fetching the Posts");
