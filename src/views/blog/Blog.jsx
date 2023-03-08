@@ -10,9 +10,9 @@ const Blog = (props) => {
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
+  const { id } = params;
   useEffect(() => {
-    const { id } = params;
-    const blog = posts.find((post) => post._id.toString() === id);
+    const blog = props.postsArr.find((post) => post.id.toString() === id);
 
     if (blog) {
       setBlog(blog);
@@ -54,6 +54,12 @@ const Blog = (props) => {
               __html: blog.content,
             }}
           ></div>
+          <button
+            // onClick={stopPropagation()}
+            href={`${process.env.REACT_APP_BE_URL}/blogPosts/${id}/pdf`}
+          >
+            Click here to download the post
+          </button>
         </Container>
       </div>
     );

@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import posts from "../../../data/posts.json";
 import BlogItem from "../blog-item/BlogItem";
 
 const BlogList = (props) => {
@@ -13,7 +12,7 @@ const BlogList = (props) => {
             marginBottom: 50,
           }}
         >
-          <BlogItem key={post.title} {...post} />
+          <BlogItem key={post.id} {...post} />
         </Col>
       ))}
     </Row>

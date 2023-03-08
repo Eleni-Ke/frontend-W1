@@ -31,13 +31,13 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        {posts.length > 0 && (
+      {posts.length > 0 && (
+        <Routes>
           <Route path="/" exact element={<Home postsArr={posts} />} />
-        )}
-        <Route path="/blog/:id" element={<Blog />} />
-        <Route path="/new" element={<NewBlogPost />} />
-      </Routes>
+          <Route path="/blog/:id" element={<Blog postsArr={posts} />} />
+          <Route path="/new" element={<NewBlogPost />} />
+        </Routes>
+      )}
       <Footer />
     </Router>
   );
