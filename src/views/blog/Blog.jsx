@@ -54,12 +54,12 @@ const Blog = (props) => {
               __html: blog.content,
             }}
           ></div>
-          <button
+          <a
             // onClick={stopPropagation()}
             href={`${process.env.REACT_APP_BE_URL}/blogPosts/${id}/pdf`}
           >
             Click here to download the post
-          </button>
+          </a>
         </Container>
       </div>
     );
