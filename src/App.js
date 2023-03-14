@@ -13,7 +13,6 @@ function App() {
     console.log(process.env.REACT_APP_BE_PROD_URL);
     try {
       let res = await fetch(process.env.REACT_APP_BE_URL + "/blogposts");
-
       if (res.ok) {
         let postArr = await res.json();
         console.log(postArr);
